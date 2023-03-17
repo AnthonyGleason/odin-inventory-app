@@ -1,1 +1,0 @@
-# express-inventory-app

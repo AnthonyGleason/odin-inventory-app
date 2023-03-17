@@ -40,4 +40,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+//test
+const {createCat} = require('./controllers/catController');
+createCat({
+  name: 'name',
+  desc: 'desc',
+  url: 'url'
+})
 module.exports = app;

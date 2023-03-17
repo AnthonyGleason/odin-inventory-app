@@ -1,10 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const {CatModel} = require('../models/Cat.js');
+const {catModel} = require('../models/Cat.js');
 
 //create cat
 let createCat = async function(catInput){
-  const newCat = await CatModel.create({
+  const newCat = await catModel.create({
     name: catInput.name,
     desc: catInput.desc,
     url: catInput.url
@@ -13,12 +13,12 @@ let createCat = async function(catInput){
 };
 //read cat querys by catName
 let findCat = async function(catName){
-  const cat = await CatModel.findOne({name: catName});
+  const cat = await catModel.findOne({name: catName});
   return cat;
 };
 //update cat
 let updateCat = async function(catInput){
-  const cat = await CatModel.updateOne({name: catInput.name},{
+  const cat = await catModel.updateOne({name: catInput.name},{
     name: catInput.name,
     desc: catInput.desc,
     url: catInput.url
@@ -27,6 +27,6 @@ let updateCat = async function(catInput){
 };
 //delete cat
 let deleteCat = async function(catName){
-  await CatModel.deleteOne({name: catName});
+  await catModel.deleteOne({name: catName});
 };
 module.exports = {createCat, findCat, updateCat, deleteCat};

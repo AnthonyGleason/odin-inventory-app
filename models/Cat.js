@@ -5,5 +5,5 @@ const catSchema = new mongoose.Schema({
   desc: String,
   url: String,
 });
-
-module.exports = mongoose.model('Cat',catSchema);
+const catModel = mongoose.model('Cat',catSchema);
+module.exports = {catSchema,catModel};

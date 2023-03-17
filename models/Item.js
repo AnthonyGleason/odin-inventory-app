@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const catSchema = require('./Cat');
+const {catSchema} = require('./Cat');
 
 const itemSchema = new mongoose.Schema({
   name: String,
@@ -9,5 +9,5 @@ const itemSchema = new mongoose.Schema({
   stock: Number,
   url: String,
 });
-
-module.exports = mongoose.model('Item', itemSchema);
+const itemModel = mongoose.model('Item', itemSchema);
+module.exports = {itemModel};

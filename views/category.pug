@@ -2,3 +2,10 @@ extends layout
 
 block content
   div=category.name
+  ul 
+    each item in items
+      li(onclick=`window.location.href='/${category.name.toLowerCase()}/${item.url}'`)
+        div=item.name 
+        div=item.desc 
+        div=item.price 
+        div=item.stock

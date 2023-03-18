@@ -1,0 +1,12 @@
+extends layout 
+
+block content
+  h1 New Category Form 
+  form(method="POST", action="/newcategory")
+    label(for="name") Category Name:
+    input(type="text" name="name" placeholder='Category Name')
+    label(for="desc") Category Description:
+    input(type="text" name="desc" placeholder='Category Description')
+    label(for="url")  Category Url:
+    input(type="text" name="url" placeholder='Category Url')
+    button(type="submit") Submit

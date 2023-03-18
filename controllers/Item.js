@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Item = require('../models/Item');
 const {getCategory} = require('../controllers/Category');
+const { findOneAndUpdate } = require('../models/Item');
 //create item
 let createItem = function(name,desc,category,price,stock,url){
   const item = Item.create({
@@ -30,7 +31,15 @@ let getAllItems = async function(){
 }
 //update item
 let updateItem = async function(itemName,itemInput){
-
+  const item = await findOneAndUpdate({name: itemName},{
+    name: itemInput.name,
+    desc: itemInput.desc,
+    category: itemInput.category,
+    price: itemInput.price,
+    stock: itemInput.stock,
+    url: itemInput.url,
+  })
+  return item;
 }
 //delete item
 let deleteItem = async function(itemName){

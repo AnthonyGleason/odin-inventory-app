@@ -2,3 +2,8 @@ extends layout
 
 block content
   h1 Inventory Tracker Demo
+  ul
+    each cat in allCategories
+      li(onclick=`window.location.href='/${cat.url}'`)
+        div=cat.name
+        div=cat.desc

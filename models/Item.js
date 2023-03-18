@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
-const {catSchema} = require('./Cat');
 
-const itemSchema = new mongoose.Schema({
+const ItemSchema = new mongoose.Schema({
   name: String,
   desc: String,
-  cat: catSchema,
+  category: String,
   price: Number,
   stock: Number,
   url: String,
 });
-const itemModel = mongoose.model('Item', itemSchema);
-module.exports = {itemModel};
+
+module.exports = mongoose.model('Item', ItemSchema);

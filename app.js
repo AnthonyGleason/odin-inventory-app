@@ -8,10 +8,6 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
-//setup mongoose
-require('dotenv').config();
-const mongoose= require('mongoose');
-mongoose.connect(process.env.DATABASE_URL, console.log('connected'));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -23,6 +19,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+//setup mongoose
+require('dotenv').config();
+const mongoose= require('mongoose');
+mongoose.connect(process.env.DATABASE_URL, console.log('connected'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

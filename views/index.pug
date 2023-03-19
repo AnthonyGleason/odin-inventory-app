@@ -7,3 +7,6 @@ block content
       li(onclick=`window.location.href='/${cat.url}'`)
         div=cat.name
         div=cat.desc
+        form(method='POST' action=`/${cat.url}`)
+          button(type='submit') Delete Category
+  button(onclick=`window.location.href='/newcategory'`) New Category

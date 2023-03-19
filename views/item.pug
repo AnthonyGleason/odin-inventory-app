@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  ul Item
+    li="Item Name: "+item.name
+    li="Item Description: "+item.desc
+    li="Item Category: "+item.category
+    li="Item Price: "+item.price
+    li="Item Stock: "+item.stock
+    button(type="submit" onclick=`window.location.href='/updateitem/${item.name}'`) Update Item

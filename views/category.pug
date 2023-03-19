@@ -5,7 +5,10 @@ block content
   ul 
     each item in items
       li(onclick=`window.location.href='/${category.name.toLowerCase()}/${item.url}'`)
-        div=item.name 
+        div=item.name
         div=item.desc 
         div=item.price 
         div=item.stock
+        form(method='POST' action=`/${category.name.toLowerCase()}/${item.url}`)
+          button(type='submit') Delete Item
+  button(onclick=`window.location.href='/newbook'`) New Book

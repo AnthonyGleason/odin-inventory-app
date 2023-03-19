@@ -31,7 +31,7 @@ let getAllItems = async function(){
 }
 //update item
 let updateItem = async function(itemName,itemInput){
-  const item = await findOneAndUpdate({name: itemName},{
+  const item = await Item.findOneAndUpdate({name: itemName},{
     name: itemInput.name,
     desc: itemInput.desc,
     category: itemInput.category,
